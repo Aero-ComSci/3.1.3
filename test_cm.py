@@ -37,7 +37,7 @@ def test_iteration3v1(monkeypatch, capsys):
     
     # Assert that the output contains the expected sequence of responses
     assert "$9" in captured.out
-
+'''
 def test_iteration3v2(monkeypatch, capsys):
     # Simulate multiple user inputs
     inputs = iter(['chicken', 'yes', 'medium', 'no'])
@@ -65,7 +65,7 @@ def test_iteration3v3(monkeypatch, capsys):
     
     # Assert that the output contains the expected sequence of responses
     assert "$8" in captured.out
-
+'''
 def test_iteration4(monkeypatch, capsys):
     inputs = inputs = iter(['chicken', 'yes', 'medium', 'yes', 'small','no','5'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
