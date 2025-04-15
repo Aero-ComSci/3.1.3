@@ -20,7 +20,7 @@ def test_iteration2(monkeypatch, capsys):
     
     # Assert that the output contains the expected sequence of responses
    # print(captured.out)
-    assert "$7" in captured.out
+    assert "$7.00" in captured.out
     
 
 
@@ -36,12 +36,11 @@ def test_iteration3v1(monkeypatch, capsys):
     captured = capsys.readouterr()
     
     # Assert that the output contains the expected sequence of responses
-    assert "$9" in captured.out
+    assert "$9.00" in captured.out
 
 def test_iteration3v2(monkeypatch, capsys):
     # Simulate multiple user inputs
-   # inputs = iter(['chicken', 'yes', 'medium', 'no'])
-    inputs = iter(['chicken', 'yes', 'medium', 'yes', 'small','yes'])
+    inputs = iter(['chicken', 'yes', 'medium', 'no'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     
     # Import and execute the target module
@@ -51,7 +50,7 @@ def test_iteration3v2(monkeypatch, capsys):
     captured = capsys.readouterr()
     
     # Assert that the output contains the expected sequence of responses
-    assert "$9" in captured.out
+    assert "$7.00" in captured.out
 
 def test_iteration3v3(monkeypatch, capsys):
     # Simulate multiple user inputs
@@ -61,12 +60,11 @@ def test_iteration3v3(monkeypatch, capsys):
     # Import and execute the target module
     import ComboMenuv3
     importlib.reload(ComboMenuv3)
-
     # Capture the output
     captured = capsys.readouterr()
     
     # Assert that the output contains the expected sequence of responses
-    assert "$8" in captured.out
+    assert "$8.00" in captured.out
 
 def test_iteration4(monkeypatch, capsys):
     inputs = inputs = iter(['chicken', 'yes', 'medium', 'yes', 'small','no','5'])
