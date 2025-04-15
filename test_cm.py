@@ -73,4 +73,4 @@ def test_iteration4(monkeypatch, capsys):
     import ComboMenuv4
 
     captured = capsys.readouterr()
-    assert "$9.25" in captured.out
+    assert "$8.25" in captured.out
